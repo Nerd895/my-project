@@ -1,0 +1,60 @@
+{% extends 'template.html'%}
+
+{%block body%}
+<style>
+h1{
+    padding:100px 200px 0;
+    font-style:cursive;
+    color:brown;
+    margin-left:100px;
+  }
+  .head{
+    color:black;
+    padding:0 200px;
+  }
+  .cook{
+    color:black;
+    font-weight:bold;
+    margin-left:300px;
+  }
+  h2{
+    padding:0 200px;
+    margin-left:100px;
+    margin-top-100px;
+  }
+  .cooks{
+    margin-left:100px;
+    padding:0 200px;
+    color:#3A0603;
+    font-weight:bold;
+  }
+  .border{
+      background-color:beige;
+      color:brown;
+      font-weight:bold;
+      border-color:brown;
+      font-style:pacifico;
+      margin-left:500px;
+      padding:10px;
+    }
+</style>
+<h1>Here's your cooking dish recipe.... {{ chefName }}!!!</h1>
+
+<body style="background:white padding:200px">
+  <h2>Ingridients...</h2>
+  <div class="cook">
+    <ul>
+    <li>2 cups heavy whipping cream</li>
+    <li>4 tablespoons unsalted butter</li>
+    <li>2 garlic cloves, minced</li>
+    <li>1 cup grated Parmesan cheese</li>
+    <li>½ cup grated Asiago cheese</li>
+    <li>½ teaspoon black pepper</li>
+    <li>⅛ teaspoon ground nutmeg</li>
+  </ul>
+</div>
+  <form action='/cook2' method='POST'>
+    <button class="border" type="submit">Ingridients checked!</button>
+  </form>
+</body>
+{%endblock%}

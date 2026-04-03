@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html land="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Photobooth</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+
+<body>
+  <video id="video" width="320" height="240" autoplay class="booth1"></video>
+  <canvas id="canvas" width="320" height="240"></canvas>
+  <div class="container">
+    <form action="/booth" method="POST">
+      <input id="username" type="text" placeholder="Enter your name" class="booth1">
+      <button id="snap" class="booth">Click</button>
+    </form>
+  </div>
+
+  <div class="container1">
+    <script>
+      const video = document.getElementById('video');
+      const canvas = document.getElementById('canvas');
+      const ctx = canvas.getContext('2d');
+      const snapBtn = document.getElementById('snap');
+      const usernameInput = document.getElementById('username');
+
+    // Start camera
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => { video.srcObject = stream; })
+        .catch(err => console.error("Camera error:", err));
+    </script>
+  </div>
+</body>
+
+
+</html>

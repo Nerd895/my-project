@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blue Seas with Search</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh; /* full viewport height */
+      background: #0f3b6d; /* dark blue background */
+      display: flex;
+      justify-content: center; /* horizontal center */
+      align-items: center;     /* vertical center */
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .canvas {
+      .canvas {
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  min-height: 300px;
+  background: linear-gradient(180deg, #eaf6ff 0%, #d9f0ff 100%);
+  border-radius: 10px;   /* reduce from 18px to 10px for a tighter curve */
+  margin: 2vmin;         /* reduce from 4vmin to 2vmin so less dark-blue border shows */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+    }
+
+    /* Translucent gradient overlay */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom right,
+        rgba(0, 100, 200, 0.35),
+        rgba(0, 150, 255, 0.15)
+      );
+      z-index: 5;
+    }
+
+    /* Search form centered inside canvas */
+    .question {
+      position: relative;
+      z-index: 20; /* above overlay and decorations */
+      text-align: center;
+    }
+
+    .question input {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #06325d;
+    }
+
+    .question button {
+      padding: 10px 14px;
+      font-size: 16px;
+      margin-left: 8px;
+      border-radius: 6px;
+      border: none;
+      background: #0f3b6d;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Floating decoration container */
+    .border-layer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 10; /* pearls/shells above overlay */
+    }
+
+    .float {
+      position: absolute;
+      animation: drift var(--dur, 16s) linear infinite,
+                 sway var(--swaydur, 6s) ease-in-out infinite;
+      opacity: var(--op, 0.9);
+    }
+
+    .pearl {
+      width: var(--size, 18px);
+      height: var(--size, 18px);
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #ffffff 0%, #f2f7ff 30%, #dfe9f8 60%, #c4d8f2 100%);
+      box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.9),
+                  inset 0 -2px 6px rgba(120, 150, 200, 0.35);
+      filter: drop-shadow(0 0 6px white); /* white glow */
+    }
+
+    .shell {
+      font-size: var(--size, 22px);
+      line-height: 1;
+      text-shadow: 0 0 6px white; /* white glow around emoji */
+    }
+    .shell::before {
+      content: "🐚";
+    }
+
+    @keyframes drift {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-6px); }
+      100% { transform: translateY(0); }
+    }
+    @keyframes sway {
+      0%   { transform: translateX(0); }
+      50%  { transform: translateX(6px); }
+      100% { transform: translateX(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <!-- Translucent overlay -->
+    <div class="overlay"></div>
+
+    <div class="done">
+      <style>
+        position: center;
+      </style>
+      <h1 style="color:white"> Welcome to the Restraunt Searcher</h1>
+    </div>
+
+
+    <!-- Centered search form -->
+    <div class="question">
+      <form action="https://www.google.com/maps/search/" method="GET" target="_blank">
+        <input autocomplete="off" name="q" autofocus placeholder="Search places" required>
+        <button type="submit">Let's find the restaurant</button>
+      </form>
+    </div>
+
+    <!-- Pearls and shells hugging the border -->
+    <div class="border-layer" aria-hidden="true">
+      <!-- Top border -->
+      <span class="float pearl" style="--size:20px; left:10%; top:0;"></span>
+      <span class="float shell" style="--size:24px; left:40%; top:0;"></span>
+      <span class="float pearl" style="--size:16px; left:70%; top:0;"></span>
+
+      <!-- Bottom border -->
+      <span class="float shell" style="--size:26px; left:20%; bottom:0;"></span>
+      <span class="float pearl" style="--size:18px; left:50%; bottom:0;"></span>
+      <span class="float shell" style="--size:22px; left:80%; bottom:0;"></span>
+
+      <!-- Left border -->
+      <span class="float pearl" style="--size:18px; left:0; top:20%;"></span>
+      <span class="float shell" style="--size:24px; left:0; top:60%;"></span>
+
+      <!-- Right border -->
+      <span class="float shell" style="--size:26px; right:0; top:30%;"></span>
+      <span class="float pearl" style="--size:20px; right:0; top:70%;"></span>
+    </div>
+  </div>
+</body>
+</html>

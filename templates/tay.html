@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1> The World</h1>
+<h4>Taylor's Version</h4>
+
+<form action='/swifty' method='POST'>
+  <input name="name" autocomplet="off" autofocus placeholder="name" required type="search">
+  <select name="era">
+    <option disabled selected>eras</option>
+    {% for era in eras %}
+    <option value="{{ era }}">{{ era }}</option>
+    {% endfor %}
+  </select>
+  <button type="submit">Toodles!</button>
+</form>
+<p>
+
+
+</p>
+<img alt="Forever & Always" src="https://www.shutterstock.com/editorial/image-editorial/MeTcQcw7N2j9E9x8NjUzNjI=/taylor-swift-performs-during-eras-tour-metlife-440nw-13935454l.jpg">
+<p> I feel lucky to be born in a world where Taylor Swift is or <b>The World Taylor's Version</b></p>
+{% endblock %}

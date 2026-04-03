@@ -1,0 +1,45 @@
+{% extends 'template.html' %}
+
+{% block body %}
+<style>
+  .cook{
+    color:brown;
+    margin:100px;
+    font-style:cursive;
+  }
+  .cooking{
+    margin:100px;
+    color:black;
+    font-style:cursive;
+  }
+  .border{
+      background-color:beige;
+      color:brown;
+      font-weight:bold;
+      border-color:brown;
+      font-style:pacifico;
+      text-align:center;
+      margin-left:500px;
+      padding:10px;
+    }
+
+</style>
+
+<div class="cook">
+  <h1>Here's the last steps: </h1>
+</div>
+<div class="cooking" style="font-weight:bold">
+  <ul>
+    <li>Melt butter in a medium saucepan over medium heat. Add garlic and cook for about 2 minutes until fragrant.</li>
+    <li>Add cream and bring to a gentle simmer. Reduce heat to low and simmer for 12–15 minutes until slightly thickened.</li>
+    <li>Whisk in cheeses slowly until melted and smooth.</li>
+    <li>Season with pepper and nutmeg. Stir well.</li>
+    <li>Serve immediately over hot pasta, or refrigerate and reheat gently over low heat. Add a splash of cream if it thickens too much.</li>
+  </ul>
+</div>
+<div>
+  <form action='/done' method='POST'>
+    <button class="border" type="submit">DONE AND DUSTED</button>
+  </form>
+</div>
+{% endblock %}

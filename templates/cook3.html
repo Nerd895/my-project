@@ -1,0 +1,44 @@
+{% extends 'template.html' %}
+
+{% block body %}
+<style>
+  .cook{
+    color:brown;
+    margin:200px 200px 50px;
+    font-style:cursive;
+  }
+  .border{
+      background-color:beige;
+      color:brown;
+      font-weight:bold;
+      border-color:brown;
+      font-style:pacifico;
+      text-align:center;
+      margin-left:500px;
+      padding:10px;
+    }
+  .cooking{
+    margin:0 100px 100px 50px;
+    color:black;
+    font-style:bold;
+  }
+
+</style>
+
+
+<h1 class="cook">Here's the last steps: </h1>
+<div class="cooking" style="font-weight: bold">
+  <ul>
+    <li>Roast the eggplant: Preheat oven to 400°F (200°C). Toss eggplant slices with olive oil and salt. Roast in a single layer for ~40 minutes until golden. Cool and reduce oven to 325°F (160°C).</li>
+    <li>Prepare the filling: Whisk together feta, cream cheese, eggs, cream, and pepper until smooth.</li>
+    <li>Assemble: Line a deep 8-inch pan with foil and drizzle with olive oil. Arrange eggplant slices upright, leaning against each other. Fill gaps with tomatoes and sprinkle half the oregano.</li>
+    <li>Bake: Pour the cheese mixture over the vegetables, leaving some exposed. Top with remaining oregano. Bake for 35–55 minutes until set and golden.</li>
+    <li>Finish: Drizzle with olive oil and za’atar. Serve warm or at room temperature.</li>
+  </ul>
+</div>
+<div>
+  <form action='/done' method='POST'>
+    <button class="border" type="submit">DONE AND DUSTED</button>
+  </form>
+</div>
+{% endblock %}

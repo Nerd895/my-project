@@ -1,0 +1,52 @@
+{%extends 'template.html'%}
+
+{% block body%}
+  <style>
+    .cook{
+      text-align:center;
+      color:black;
+      margin-left:200px;
+      margin-right:200px;
+      margin-top:200px;
+      font-style:cursive;
+    }
+    .center-img{
+      margin-left:470px;
+      margin-top:0;
+    }
+    .border{
+      background-color:beige;
+      color:brown;
+      font-weight:bold;
+      border-color:brown;
+      font-style:pacifico;
+    }
+    .border1{
+      background-color:beige;
+      color:black;
+      font-weight:bold;
+      border-color:back;
+      font-style:pacifico;
+    }
+  </style>
+</head>
+<body>
+  <h1>Recipe List</h1>
+  <ul>
+    {% for recipe in dishes %}
+    <li>{{ recipe.name }} by {{ recipe.chef }}</li>
+    {% endfor %}
+  </ul>
+  <div class="cook" id="chef">
+    <form action='/cookbook' method='POST'>
+      <h1>Lets make your dish together...</h1>
+      <input class="border1" type="text" name="dishName" placeholder="Dish you want" required />
+      <input class="border1" type="text" name="chefName" placeholder="Our Chef's Name" required />
+      <button class="border" type="submit">Lets make the dish<button/>
+    </form>
+  </div>
+   <img class="center-img" src="https://i.postimg.cc/G3ZMhz2q/pengu2.png" width=250px>
+
+</body>
+
+{% endblock %}

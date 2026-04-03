@@ -1,0 +1,23 @@
+{% extends 'template.html'%}
+
+{%block body%}
+<style>
+  h1{
+    padding:100px 200px 0;
+    font-style:cursive;
+    color:brown;
+    margin-left:100px;
+    text-align:center;
+    }
+  .head{
+    color:black;
+    padding:100px;
+    font-weight: bold;
+  }
+
+</style>
+<h1>Here's your cooking dish recipe....{{ chefName }}!!!</h1>
+
+<body style="background:white padding:200px">
+  <h1 class="head">boil the egg for 20 minutes slowly for the runny yolk!!!</h1>
+{%endblock%}

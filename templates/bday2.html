@@ -1,0 +1,38 @@
+{% extends 'bdaylayout.html'%}
+
+{% block body %}
+  <style>
+    .center-img{
+      display:flex;
+      justify-content:center;
+      margin: 20px 0;
+    }
+  </style>
+
+  <div class="center-img">
+    {% for name in gurl%}
+      <h1>Happy Birthday {{ name }} Honey!!! It's supposed to be Fun...Turning {{ gurl[name]}} </h1>
+    {% endfor %}
+  </div>
+  <img alt="Birthday cake" src="https://i.pinimg.com/originals/a3/f1/86/a3f186387eb5237d79bd9b520c681ada.gif" width=300> <img alt="ballons"src="https://i.pinimg.com/originals/c1/91/11/c191118bcec19fe918bd981e96adf50a.gif" width=300><img alt="gifts" src="https://66.media.tumblr.com/20ff4d87f01520924e7e08eaf3c62546/tumblr_mfj3285C3C1rfjowdo1_500.gif"width=300><img alt="magic wand" src="https://dl.glitter-graphics.com/pub/3549/3549323c9vemep7nz.gif"width=300>
+
+  <div class="center-img">
+    <h3>Hope you have a wonderfull day filled with all the love you deserve.May this year brings you joy the way you always wanted.<br></h3>
+  </div>
+  <div class="center-img">
+    <h2> Do you want to go out with me?</h2>
+  </div>
+  <div class="center-img">
+    <form action='/bday2' method='POST'>
+      <select name="options">
+        <option disabled selected>answer</option>
+        {%for options in options%}
+        <option value={{options}}>{{options}}</option>
+        {% endfor %}
+      </select>
+      <button type="submit">ans</button>
+    </form>
+  </div>
+
+
+{% endblock %}

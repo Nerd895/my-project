@@ -1,0 +1,55 @@
+{% extends 'template.html'%}
+
+{%block body%}
+<style>
+  h1{
+    padding:100px 200px 0;
+    font-style:cursive;
+    color:brown;
+    margin-left:100px;
+  }
+  .head{
+    color:black;
+    padding:0 200px;
+  }
+  h2{
+    padding:0 200px;
+    margin-left:100px;
+    margin-top-100px;
+  }
+  .cooks{
+    margin-left:100px;
+    padding:0 200px;
+    color:#3A0603;
+    font-weight:bold;
+  }
+  .border{
+      background-color:beige;
+      color:brown;
+      font-weight:bold;
+      border-color:brown;
+      font-style:pacifico;
+      margin-left:500px;
+      padding:10px;
+    }
+</style>
+<h1>Here's your cooking dish recipe....{{ chefName}}!!!</h1>
+
+<body style="background:white padding:200px">
+  <h1 class="head">Ingridients...</h1>
+  <div class="cooks">
+    <ul>
+    <li>an eggplant, cheese</li>
+    <p></p>
+    <li>cheese, garlic powder, peri-peri</li>
+    <p></p>
+    <li>ground flour, crust crumbs</li>
+    <p></p>
+
+  </ul>
+</div>
+  <form action='/cook3' method='POST'>
+    <button class="border" type="submit">Ingridients checked!</button>
+  </form>
+</body>
+{%endblock%}

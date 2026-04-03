@@ -1,0 +1,35 @@
+{% extends 'search.html'%}
+
+{% block body%}
+<style>
+    body {
+        margin: 0;
+        height: 100vh; /* full viewport height */
+        display: flex;
+        justify-content: center; /* horizontal center */
+        align-items: center;     /* vertical center */
+        background: #f0f8ff;     /* optional background color */
+    }
+
+    .question {
+        text-align: center;
+    }
+
+    input {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 8px 12px;
+        font-size: 16px;
+        margin-left: 8px;
+    }
+</style>
+
+<div class="question">
+  <form action="https://www.google.com/maps/search/" method='GET'>
+    <input autocomplete="off" name="q" autofocus placeholder="search" required>
+    <button type="submit">Lets find the restraunt</button>
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>honeybday</title>
+    <style>
+      body {
+        background: lavender;
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 4x solid white;
+
+      }
+      .birthdaycard {
+        margin: 20px 0;
+      }
+      .center-img {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+      }
+      .top-img{
+
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+
+  <h1>Hey girllie It's your special day</h1>
+  <div class="birthdaycard" id="bday4">
+    <form action='/bday1' method='POST'>
+      <input autocomplete="off" name="bbg" autofocus placeholder="bbg" required type="search">
+      <input autocomplete="off" name="year" autofocus placeholder="year" required type="search">
+      <button type="submit">Happy Birthday</button>
+    </form>
+  </div>
+  <div class="center-img">
+    <img alt="small gift" src="https://i.pinimg.com/originals/33/b7/91/33b791ad0c25c99b7d34a15a7a750a21.gif" width=300>
+  </div>
+  <div class="top-img">
+    <img alt="celebration" src="https://i.pinimg.com/originals/27/83/48/27834815aec73e9fb40cfd7e6f207ad8.gif" style="max-width: 100%; height: auto">
+  </div>
+</html>

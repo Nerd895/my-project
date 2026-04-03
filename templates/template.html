@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" name="viewport" content="initial-scale=1 width=device-width">
+  <title>Food Border Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: beige;
+    }
+
+    .border-container {
+      position: relative;
+      border: 20px solid brown;
+      height: 100vh;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .floating-icon {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-size: cover;
+      animation: float 10s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(20px); }
+      100% { transform: translateY(0); }
+    }
+
+
+    .top { top: 0; left: calc(10% * var(--i)); }
+    .bottom { bottom: 0; left: calc(10% * var(--i)); }
+    .left { left: 0; top: calc(10% * var(--i)); }
+    .right { right: 0; top: calc(10% * var(--i)); }
+  </style>
+</head>
+<body>
+  <div class="border-container">
+
+    <div class="floating-icon top" style="--i:1; background-image: url('https://img.icons8.com/emoji/48/hamburger-emoji.png');"></div>
+    <div class="floating-icon top" style="--i:3; background-image: url('https://img.icons8.com/emoji/48/pizza-emoji.png');"></div>
+    <div class="floating-icon top" style="--i:5; background-image: url('https://img.icons8.com/emoji/48/hamburger-emoji.png');"></div>
+
+
+    <div class="floating-icon bottom" style="--i:2; background-image: url('https://img.icons8.com/emoji/48/pizza-emoji.png');"></div>
+    <div class="floating-icon bottom" style="--i:4; background-image: url('https://img.icons8.com/emoji/48/hamburger-emoji.png');"></div>
+
+
+    <div class="floating-icon left" style="--i:1; background-image: url('https://img.icons8.com/emoji/48/pizza-emoji.png');"></div>
+    <div class="floating-icon left" style="--i:3; background-image: url('https://img.icons8.com/emoji/48/hamburger-emoji.png');"></div>
+    {%block body%} {%endblock%}
+
+    <div class="floating-icon right" style="--i:2; background-image: url('https://img.icons8.com/emoji/48/hamburger-emoji.png');"></div>
+    <div class="floating-icon right" style="--i:4; background-image: url('https://img.icons8.com/emoji/48/pizza-emoji.png');"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends 'layout2.html' %}
+
+{% block body %}
+<script>
+  snapBtn.addEventListener('click', () => {
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    const name = usernameInput.value.trim();
+    if (name) {
+      ctx.font = "16px 'Press Start 2P', monospace"; // pixel font
+      ctx.fillStyle = "red";
+            ctx.fillText(name, 10, canvas.height - 20); // bottom left
+    }
+  });
+</script>
+
+{% endblock %}

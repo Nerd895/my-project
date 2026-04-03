@@ -1,0 +1,46 @@
+{% extends 'template.html' %}
+
+{% block body %}
+<style>
+  .cook{
+    color:brown;
+    margin:100px 100px 50px;
+    font-style:cursive;
+  }
+  .cooking{
+    margin:0 100px 100px 50px;
+    color:black;
+    font-style:bold;
+  }
+  .border{
+      background-color:beige;
+      color:brown;
+      font-weight:bold;
+      border-color:brown;
+      font-style:pacifico;
+      text-align:center;
+      margin-left:500px;
+      padding:10px;
+    }
+
+</style>
+
+
+<h1 class="cook">Here's the last steps: </h1>
+<div class="cooking" style="font-weight: bold">
+  <ul>
+    <li>Cook the pasta: Boil spaghetti in salted water until al dente. Reserve ½ cup of pasta water, then drain.</li>
+    <p></p>
+    <li>Infuse the oil: In a large skillet, heat olive oil over medium heat. Add garlic and red pepper flakes. Cook gently until garlic is golden—don’t let it burn!</li>
+    <p></p>
+    <li>Combine: Add the drained pasta to the skillet. Toss well to coat in the garlic oil. Add a splash of reserved pasta water to loosen if needed.</li>
+    <p></p>
+    <li>Finish: Stir in parsley and cheese (if using). Toss again and serve immediately.</li>
+  </ul>
+</div>
+<div>
+  <form action='/done' method='POST'>
+    <button class="border" type="submit">DONE AND DUSTED</button>
+  </form>
+</div>
+{% endblock %}

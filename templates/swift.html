@@ -1,0 +1,12 @@
+{% extends 'layout.html'%}
+
+{% block body%}
+
+ <ul>
+  <h1>Welcome To Our Swifties World!!!</h1>
+  {% for name in swifties %}
+  <li><h2>{{ name }} love {{ swifties[name] }} era!<h2></li>
+  {% endfor %}
+ </ul>
+
+{% endblock%}
